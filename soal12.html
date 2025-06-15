@@ -1,0 +1,27 @@
+<!-- 
+ 
+Soal 12: Input Handler
+
+Soal:
+Tampilkan nilai input ke dalam paragraf secara real-time. 
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" oninput="showValue(this.value)" />
+    <p id="output"></p>
+  </body>
+
+  <script>
+    function showValue(value) {
+      document.getElementById("output").textContent = value;
+    }
+  </script>
+</html>
