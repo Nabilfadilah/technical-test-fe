@@ -1,0 +1,60 @@
+<!-- Soal 21: ToDo App Sederhana (HTML + JS) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDo App</title>
+  <style>
+    body { font-family: sans-serif; max-width: 500px; margin: 30px auto; }
+    input, button { padding: 8px; margin: 5px 0; }
+    ul { padding: 0; list-style: none; }
+    li { display: flex; justify-content: space-between; border: 1px solid #ccc; margin-top: 5px; padding: 5px; }
+  </style>
+</head>
+<body>
+  <h2>ToDo App</h2>
+  <input type="text" id="todoInput" placeholder="Tulis tugas...">
+  <button onclick="addTodo()">Tambah</button>
+  <ul id="todoList"></ul>
+
+  <script>
+    let todos = [];
+
+    function renderTodos() {
+      const list = document.getElementById("todoList");
+      list.innerHTML = "";
+      todos.forEach((todo, index) => {
+        const li = document.createElement("li");
+
+        const span = document.createElement("span");
+        span.textContent = todo;
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Hapus";
+        deleteBtn.onclick = () => deleteTodo(index);
+
+        li.appendChild(span);
+        li.appendChild(deleteBtn);
+        list.appendChild(li);
+      });
+    }
+
+    function addTodo() {
+      const input = document.getElementById("todoInput");
+      const value = input.value.trim();
+      if (value) {
+        todos.push(value);
+        input.value = "";
+        renderTodos();
+      }
+    }
+
+    function deleteTodo(index) {
+      todos.splice(index, 1);
+      renderTodos();
+    }
+  </script>
+</body>
+</html>
