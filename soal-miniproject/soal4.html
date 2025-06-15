@@ -1,0 +1,19 @@
+<!--
+✅ Mini Project 4: Fetch API (JSONPlaceholder)
+-->
+
+<h2>Daftar Pengguna</h2>
+<ul id="userList"></ul>
+
+<script>
+  fetch("https://jsonplaceholder.typicode.com/users")
+    .then(response => response.json())
+    .then(data => {
+      const list = document.getElementById("userList");
+      data.forEach(user => {
+        const li = document.createElement("li");
+        li.textContent = user.name + " - " + user.email;
+        list.appendChild(li);
+      });
+    });
+</script>
