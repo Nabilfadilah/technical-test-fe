@@ -1,35 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// Soal 3: Lazy Loading Gambar (Image Lazy Load)
+// Buatlah komponen React yang dapat melakukan lazy load gambar menggunakan HTML <img loading="lazy" />
+
+import "./App.css";
+import LazyImage from "./components/LazyImage";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>Galeri Gambar</h1>
+      <LazyImage src="https://placehold.co/300x200" alt="Gambar 1" />
+      <LazyImage src="https://placehold.co/600x400" alt="Gambar 2" />
+      <LazyImage src="https://placehold.co/600x400" alt="Gambar 3" />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
