@@ -33,3 +33,9 @@ function App() {
 }
 
 export default App;
+
+// Alur Kerja Singkat Redux-nya:
+// 1. Product.jsx memanggil addToCart() → mengirim data produk ke Redux.
+// 2. Redux menyimpan data di state.cart.items.
+// 3. Cart.jsx mengambil items dari Redux dan menampilkannya.
+// 4. Jika user klik "Remove", maka removeFromCart() dijalankan untuk menghapus item dari state.
